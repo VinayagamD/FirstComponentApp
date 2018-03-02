@@ -16,7 +16,7 @@ import android.arch.persistence.room.Query
 interface ListItemDao {
 
     @Query("SELECT * FROM ListItem")
-    fun getListItems():LiveData<List<ListItem>>
+    fun getListItems():LiveData<MutableList<ListItem>>
 
     @Query("SELECT * FROM ListItem WHERE itemId = :itemId")
     fun getListItemById(itemId:String):LiveData<ListItem>

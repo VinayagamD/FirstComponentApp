@@ -1,10 +1,9 @@
 package com.vinaylogics.firstcomponentapp.di
 
-import android.app.Application
-import android.app.ListFragment
 import com.vinaylogics.firstcomponentapp.RoomDemoApplication
 import com.vinaylogics.firstcomponentapp.create.CreateFragment
 import com.vinaylogics.firstcomponentapp.detail.DetailFragment
+import com.vinaylogics.firstcomponentapp.list.ListFragment
 import dagger.Component
 import javax.inject.Singleton
 

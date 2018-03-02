@@ -24,12 +24,10 @@ android {
 }
 
 ext{
-    androidSupportVersion = 1
+    androidSupportVersion = "27.1.0"
 }
 
-kapt{
-    generateStubs = true
-}
+
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -46,7 +44,9 @@ dependencies {
     implementation 'android.arch.lifecycle:viewmodel:1.1.0'
     // alternatively, just LiveData
     implementation 'android.arch.lifecycle:livedata:1.1.0'
-    annotationProcessor "android.arch.lifecycle:compiler:1.1.0"
+    implementation 'android.arch.lifecycle:runtime:1.1.0'
+    implementation 'android.arch.lifecycle:extensions:1.1.0'
+    kapt "android.arch.lifecycle:compiler:1.1.0"
     // Room (use 1.1.0-alpha2 for latest alpha)
     implementation 'android.arch.persistence.room:runtime:1.0.0'
     kapt "android.arch.persistence.room:compiler:1.0.0"
@@ -82,5 +82,5 @@ dependencies {
     implementation 'com.android.support:design:27.1.0'
     // https://mvnrepository.com/artifact/javax.inject/javax.inject
     implementation group: 'javax.inject', name: 'javax.inject', version: '1'
-
+    implementation "com.android.support:support-core-utils:27.1.0"
 }

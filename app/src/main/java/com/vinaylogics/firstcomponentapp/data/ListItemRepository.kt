@@ -11,7 +11,7 @@ import android.arch.lifecycle.LiveData
 class ListItemRepository
 @Inject constructor(val listItemDao: ListItemDao) {
 
-    fun getListData():LiveData<List<ListItem>> = listItemDao.getListItems()
+    fun getListData():LiveData<MutableList<ListItem>> = listItemDao.getListItems()
 
     fun getListItem(itemId: String): LiveData<ListItem> = listItemDao.getListItemById(itemId)
 

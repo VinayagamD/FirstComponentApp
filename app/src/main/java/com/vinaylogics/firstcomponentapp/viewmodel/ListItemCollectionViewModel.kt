@@ -31,7 +31,7 @@ import com.vinaylogics.firstcomponentapp.data.ListItemRepository
 
 class ListItemCollectionViewModel internal constructor(private val repository: ListItemRepository) : ViewModel() {
 
-    val listItems: LiveData<List<ListItem>>
+    val listItems: LiveData<MutableList<ListItem>>
         get() = repository.getListData()
 
     fun deleteListItem(listItem: ListItem) {
