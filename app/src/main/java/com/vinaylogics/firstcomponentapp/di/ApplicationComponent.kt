@@ -2,6 +2,7 @@ package com.vinaylogics.firstcomponentapp.di
 
 import android.app.Application
 import android.app.ListFragment
+import com.vinaylogics.firstcomponentapp.RoomDemoApplication
 import com.vinaylogics.firstcomponentapp.create.CreateFragment
 import com.vinaylogics.firstcomponentapp.detail.DetailFragment
 import dagger.Component
@@ -19,5 +20,6 @@ interface ApplicationComponent {
     fun inject(createFragment: CreateFragment)
     fun inject(detailFragment: DetailFragment)
 
-    fun application():Application
+
+    fun application():RoomDemoApplication
 }

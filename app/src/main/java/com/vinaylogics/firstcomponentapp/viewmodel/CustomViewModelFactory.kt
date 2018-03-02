@@ -32,7 +32,7 @@ import javax.inject.Singleton
  */
 @Singleton
 class CustomViewModelFactory @Inject
-constructor(private val repository: ListItemRepository) : ViewModelProvider.Factory {
+constructor( val repository: ListItemRepository) : ViewModelProvider.Factory {
 
     @Throws(IllegalArgumentException::class)
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {

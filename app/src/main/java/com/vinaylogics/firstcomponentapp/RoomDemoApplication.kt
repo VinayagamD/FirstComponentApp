@@ -3,8 +3,8 @@ package com.vinaylogics.firstcomponentapp
 import android.app.Application
 import com.vinaylogics.firstcomponentapp.di.ApplicationComponent
 import com.vinaylogics.firstcomponentapp.di.ApplicationModule
+import com.vinaylogics.firstcomponentapp.di.DaggerApplicationComponent
 import com.vinaylogics.firstcomponentapp.di.RoomModule
-import dagger.android.support.DaggerApplication
 
 
 /**
@@ -15,11 +15,11 @@ class RoomDemoApplication :Application() {
 
     override fun onCreate() {
         super.onCreate()
-    /*    applicationComponent =
+        applicationComponent = DaggerApplicationComponent
                 .builder()
                 .applicationModule( ApplicationModule(this))
                 .roomModule( RoomModule(this))
-                .build()*/
+                .build()
     }
 
     fun getApplicationComponent(): ApplicationComponent {

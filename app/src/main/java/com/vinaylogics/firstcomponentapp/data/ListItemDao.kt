@@ -15,35 +15,16 @@ import android.arch.persistence.room.Query
 @Dao
 interface ListItemDao {
 
-    /**
-     * Get entity by itemId. For this App, we will pass in an ID when the detail Activity starts;
-     * therefore we need not use LiveData as the Data will not change during the Activity's
-     * Lifecycle.
-     * @param itemId A Unique identifier for a given record within the Database.
-     * @return
-     */
-    @Query("SELECT * FROM ListItem WHERE itemId = :itemId")
-    fun getListItemById(itemId: String): LiveData<ListItem>
-
-    /**
-     * Get all entities of type ListItem
-     * @return
-     */
     @Query("SELECT * FROM ListItem")
-    fun getListItems(): LiveData<List<ListItem>>
+    fun getListItems():LiveData<List<ListItem>>
 
+    @Query("SELECT * FROM ListItem WHERE itemId = :itemId")
+    fun getListItemById(itemId:String):LiveData<ListItem>
 
-    /**
-     * Insert a new ListItem
-     * @param listItem
-     */
     @Insert(onConflict = REPLACE)
-    fun insertListItem(listItem: ListItem): Long?
+    fun insertListItem(listItem: ListItem):Long
 
-    /**
-     * Delete a given ListItem
-     * @param listItem
-     */
     @Delete
     fun deleteListItem(listItem: ListItem)
+
 }

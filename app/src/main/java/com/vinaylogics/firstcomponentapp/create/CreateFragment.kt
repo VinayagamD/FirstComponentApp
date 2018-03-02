@@ -20,9 +20,9 @@ import com.vinaylogics.firstcomponentapp.RoomDemoApplication
 /**
  * A simple [Fragment] subclass.
  */
-class CreateFragment : Fragment() {
+class CreateFragment() : Fragment() {
     @Inject
-    var viewModelFactory: ViewModelProvider.Factory? = null
+    lateinit var viewModelFactory: ViewModelProvider.Factory
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

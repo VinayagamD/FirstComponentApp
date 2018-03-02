@@ -18,7 +18,7 @@ class CreateActivity : BaseActivity() {
         }
 
         addFragmentToActivity(manager,
-                fragment!!,
+                fragment,
                 R.id.root_activity_create,
                 CREATE_FRAG
         )

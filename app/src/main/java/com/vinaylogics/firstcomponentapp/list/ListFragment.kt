@@ -13,7 +13,7 @@ import com.vinaylogics.firstcomponentapp.R
 /**
  * A simple [Fragment] subclass.
  */
-class ListFragment : Fragment() {
+class ListFragment() : Fragment() {
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -22,4 +22,8 @@ class ListFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_list, container, false)
     }
 
+    companion object {
+        fun newInstance()=ListFragment()
+    }
 }// Required empty public constructor
+

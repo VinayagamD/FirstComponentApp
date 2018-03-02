@@ -5,24 +5,28 @@ import android.arch.persistence.room.Room
 import com.vinaylogics.firstcomponentapp.data.ListItemDataBase
 import com.vinaylogics.firstcomponentapp.data.ListItemRepository
 import android.arch.lifecycle.ViewModelProvider
+import com.vinaylogics.firstcomponentapp.RoomDemoApplication
 import javax.inject.Singleton
 import dagger.Provides
 import com.vinaylogics.firstcomponentapp.data.ListItemDao
 import com.vinaylogics.firstcomponentapp.viewmodel.CustomViewModelFactory
+import dagger.Module
 
 
 /**
  * Created by vinay on 01-03-2018.
  */
-class RoomModule(application: Application) {
-    private val database:ListItemDataBase
-    init {
-        this.database = Room.databaseBuilder(
-                application,
-                ListItemDataBase::class.java,
-                "ListItem.db"
-        ).build()
-    }
+@Module
+class RoomModule (application: RoomDemoApplication) {
+
+    val database:ListItemDataBase
+     init {
+      database   = Room.databaseBuilder(
+                 application,
+                 ListItemDataBase::class.java,
+                 "ListItem.db"
+         ).build()
+     }
 
     @Provides
     @Singleton
@@ -38,7 +42,7 @@ class RoomModule(application: Application) {
 
     @Provides
     @Singleton
-    fun provideListItemDatabase(application: Application)=database
+    fun provideListItemDatabase()=database
 
     @Provides
     @Singleton
